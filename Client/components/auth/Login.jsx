@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [mail, onChangeMail] = useState();
   const [password, onChangePassword] = useState();
-  const [login, setLogin] = useState();
 
   return (
     <View style={styles.page}>
@@ -30,18 +29,22 @@ export default function Login() {
             },
             styles.button,
           ]}
-          onPress={login}
+          onPress={() => navigation.navigate("login")}
         >
           <Text style={styles.text}>Login</Text>
         </Pressable>
-        <Pressable onPress={{}}>
+        <Pressable onPress={() => navigation.navigate("signup")}>
           <Text style={styles.content}>
             Don't have an account? <Text style={styles.login}>Sign Up</Text>
           </Text>
         </Pressable>
         <View style={styles.terms}>
-          <Text style={{ color: "#888" }}>Terms & Conditions</Text>
-          <Text style={{ color: "#888" }}>Privacy Policy</Text>
+          <Pressable onPress={() => navigation.navigate("termsCondition")}>
+            <Text style={{ color: "#888" }}>Terms & Conditions</Text>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("privacyPolicy")}>
+            <Text style={{ color: "#888" }}>Privacy Policy</Text>
+          </Pressable>
         </View>
       </View>
     </View>

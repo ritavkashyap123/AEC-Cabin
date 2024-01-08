@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  Pressable,
-} from "react-native";
+import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 
-export default function Signup() {
+export default function Signup({ navigation }) {
   const [text, onChangeText] = useState();
   const [number, onChangeNumber] = useState();
   const [mail, onChangeMail] = useState();
   const [password, onChangePassword] = useState();
-  const [login, setLogin] = useState();
 
   return (
     <View style={styles.page}>
@@ -50,18 +43,21 @@ export default function Signup() {
             },
             styles.button,
           ]}
-          onPress={login}
+          onPress={() => navigation.navigate("signup")}
         >
           <Text style={styles.text}>Sign up</Text>
         </Pressable>
-        <Pressable onPress={{}}>
-          <Text style={styles.content}>
-            Already have an account? <Text style={styles.login}>Login</Text>
-          </Text>
+        <Text style={styles.content}>Already have an account?</Text>
+        <Pressable onPress={() => navigation.navigate("login")}>
+          <Text style={styles.login}>Login</Text>
         </Pressable>
         <View style={styles.terms}>
-          <Text style={{ color: "#888" }}>Terms & Conditions</Text>
-          <Text style={{ color: "#888" }}>Privacy Policy</Text>
+          <Pressable onPress={() => navigation.navigate("termsCondition")}>
+            <Text style={{ color: "#888" }}>Terms & Conditions</Text>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("privacyPolicy")}>
+            <Text style={{ color: "#888" }}>Privacy Policy</Text>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -102,6 +98,9 @@ const styles = StyleSheet.create({
   },
   login: {
     color: "blue",
+    // borderWidth: 1,
+    // paddingVertical: 5,
+    // paddingHorizontal: 10,
   },
   terms: {
     display: "flex",
