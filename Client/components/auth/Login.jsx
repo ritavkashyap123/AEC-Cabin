@@ -29,20 +29,19 @@ export default function Login({ navigation }) {
             },
             styles.button,
           ]}
-          onPress={() => navigation.navigate("login")}
+          onPress={() => navigation.navigate("Home")}
         >
           <Text style={styles.text}>Login</Text>
         </Pressable>
+        <Text style={styles.content}>Don't have an account?</Text>
         <Pressable onPress={() => navigation.navigate("signup")}>
-          <Text style={styles.content}>
-            Don't have an account? <Text style={styles.login}>Sign Up</Text>
-          </Text>
+          <Text style={styles.login}>Sign Up</Text>
         </Pressable>
         <View style={styles.terms}>
-          <Pressable onPress={() => navigation.navigate("termsCondition")}>
+          <Pressable onPress={() => navigation.navigate("Terms and Condition")}>
             <Text style={{ color: "#888" }}>Terms & Conditions</Text>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate("privacyPolicy")}>
+          <Pressable onPress={() => navigation.navigate("Privacy Policy")}>
             <Text style={{ color: "#888" }}>Privacy Policy</Text>
           </Pressable>
         </View>
@@ -85,6 +84,7 @@ const styles = StyleSheet.create({
   },
   login: {
     color: "blue",
+    fontWeight: "bold",
   },
   terms: {
     display: "flex",

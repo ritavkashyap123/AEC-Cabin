@@ -43,7 +43,7 @@ export default function Signup({ navigation }) {
             },
             styles.button,
           ]}
-          onPress={() => navigation.navigate("signup")}
+          onPress={() => navigation.navigate("Home")}
         >
           <Text style={styles.text}>Sign up</Text>
         </Pressable>
@@ -52,10 +52,10 @@ export default function Signup({ navigation }) {
           <Text style={styles.login}>Login</Text>
         </Pressable>
         <View style={styles.terms}>
-          <Pressable onPress={() => navigation.navigate("termsCondition")}>
+          <Pressable onPress={() => navigation.navigate("Terms and Condition")}>
             <Text style={{ color: "#888" }}>Terms & Conditions</Text>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate("privacyPolicy")}>
+          <Pressable onPress={() => navigation.navigate("Privacy Policy")}>
             <Text style={{ color: "#888" }}>Privacy Policy</Text>
           </Pressable>
         </View>
@@ -98,9 +98,7 @@ const styles = StyleSheet.create({
   },
   login: {
     color: "blue",
-    // borderWidth: 1,
-    // paddingVertical: 5,
-    // paddingHorizontal: 10,
+    fontWeight: "bold",
   },
   terms: {
     display: "flex",
