@@ -29,7 +29,7 @@ export default function Login({ navigation }) {
             },
             styles.button,
           ]}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("tab")}
         >
           <Text style={styles.text}>Login</Text>
         </Pressable>

@@ -1,12 +1,21 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import SearchBar from "../../components/searchbar/SearchBar";
 
 const Home = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <SearchBar />
     </View>
-  )
-}
 
-export default Home
+  );
+};
+
+const styles = StyleSheet.create({
+  nav: {
+    bottom: 0,
+    alignContent: "center",
+  },
+});
+
+export default Home;
