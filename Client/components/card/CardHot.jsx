@@ -5,7 +5,7 @@ import Counter from "react-native-counters";
 import Feather from "react-native-vector-icons/Feather";
 import { Image } from "react-native-elements";
 
-export default function Card(props) {
+export default function CardHot(props) {
   const minusIcon = () => {
     return <Feather name="minus" size={20} color={"white"} />;
   };
@@ -26,15 +26,15 @@ export default function Card(props) {
       >
         <View style={styles.main}>
           <View style={styles.content}>
-            <Text style={styles.name}>{props.name}</Text>
-            <Text style={styles.price}>
-              {" "}
-              ₹<Text style={styles.priceNot}>{" "}{props.priceNot}</Text>{" "}
-              {props.price}
-            </Text>
+            <Text style={styles.name}>{props.head1}</Text>
+            <Text style={styles.price}>{props.price} % OFF</Text>
+            <Text style={styles.name}>{props.head2}</Text>
           </View>
           <View style={styles.imgBox}>
-            <Image style={styles.photo} source={props.image} />
+            <Image
+              style={styles.photo}
+              source={props.image}
+            />
           </View>
         </View>
         <View style={styles.number}>
@@ -54,9 +54,9 @@ export default function Card(props) {
 
 const styles = StyleSheet.create({
   box: {
-    height: 110,
+    height: 150,
     width: "95%",
-    borderRadius: 20,
+    borderRadius: 30,
     display: "flex",
     alignItems: "flex-end",
     flexDirection: "column",
@@ -68,26 +68,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   content: {
-    flex: 3,
+    flex: 5,
     gap: 10,
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
   name: {
-    fontSize: 25,
+    fontSize: 24,
     color: "white",
   },
   price: {
-    fontSize: 20,
+    fontSize: 25,
     color: "white",
   },
-  priceNot: {
-    textDecorationLine: "line-through",
-    textDecorationStyle: "solid",
-    fontSize: 14,
-  },
   imgBox: {
-    flex: 1,
+    flex: 2,
     display: "flex",
     width: "100%",
     alignItems: "center",
@@ -117,7 +112,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   photo: {
-    height: 70,
-    width: 70,
+    height: 100,
+    width: 100,
   },
 });

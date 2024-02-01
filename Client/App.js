@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TermsCondition from "./pages/terms_and_policy/TermsCondition";
 import PrivacyPolicy from "./pages/terms_and_policy/PrivacyPolicy";
 import TabNavigator from "./components/tab/TabNavigator";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Stack = createNativeStackNavigator();
 
@@ -39,14 +40,14 @@ const StackNavigator = () => {
   );
 };
 
-
-
 export default function App() {
   return (
     <>
-      <NavigationContainer>
-        <StackNavigator />
-      </NavigationContainer>
+      {/* <SafeAreaProvider> */}
+        <NavigationContainer>
+          <StackNavigator />
+        </NavigationContainer>
+      {/* </SafeAreaProvider> */}
     </>
   );
 }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+import { StyleSheet,TextInput, Text, View, Pressable } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+
 
 export default function Login({ navigation }) {
   const [mail, onChangeMail] = useState();
   const [password, onChangePassword] = useState();
+  const [hidePass, setHidePass] = useState(true);
 
   return (
     <View style={styles.page}>
@@ -20,6 +23,8 @@ export default function Login({ navigation }) {
           onChangeText={onChangePassword}
           value={password}
           placeholder="Password"
+          secureTextEntry={hidePass ? true : false}
+            // {<Ionicons name="eye" onPress={() => setHidePass(!hidePass)} />}
         />
 
         <Pressable

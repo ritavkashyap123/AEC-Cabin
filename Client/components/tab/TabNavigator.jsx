@@ -4,9 +4,53 @@ import Cart from "../../pages/cart/Cart";
 import Profile from "../../pages/profile/Profile";
 import Home from "../../pages/home/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import AnimatedTabBar, {TabsConfigsType} from "curved-bottom-navigation-bar";
 import { Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
+
+// const TabsConfigsType = {
+//   Home: {
+//     icon: ({ progress, focused }) => {
+//       <Ionicons
+//         name="home"
+//         color={focused ? "#43CA7D" : "#808080"}
+//         size={size}
+//       />;
+//     } /* Icon Component */,
+//     renderTitle: ({ progress, title }) => {} /* Custom reanimated Component */,
+//   },
+//   Menu: {
+//     icon: ({ progress, focused }) => {
+//       <Ionicons
+//         name="fast-food"
+//         color={focused ? "#43CA7D" : "#808080"}
+//         size={size}
+//       />;
+//     } /* Icon Component */,
+//     renderTitle: ({ progress, title }) => {} /* Custom reanimated Component */,
+//   },
+//   Cart: {
+//     icon: ({ progress, focused }) => {
+//       <Ionicons
+//         name="cart"
+//         color={focused ? "#43CA7D" : "#808080"}
+//         size={size}
+//       />;
+//     } /* Icon Component */,
+//     renderTitle: ({ progress, title }) => {} /* Custom reanimated Component */,
+//   },
+//   Profile: {
+//     icon: ({ progress, focused }) => {
+//       <Ionicons
+//         name="person"
+//         color={focused ? "#43CA7D" : "#808080"}
+//         size={size}
+//       />;
+//     } /* Icon Component */,
+//     renderTitle: ({ progress, title }) => {} /* Custom reanimated Component */,
+//   },
+// };
 
 export default function TabNavigator() {
   return (
@@ -16,6 +60,7 @@ export default function TabNavigator() {
         headerTintColor: "black",
         headerStyle: { backgroundColor: "#43CA7D" },
       }}
+      // tabBar={(props) => <AnimatedTabBar tabs={TabsConfigsType} {...props} />}
     >
       <Tab.Screen
         name="Home"
@@ -50,7 +95,7 @@ export default function TabNavigator() {
           tabBarActiveTintColor: "#43CA7D",
         }}
       />
-      
+
       <Tab.Screen
         name="Profile"
         component={Profile}
