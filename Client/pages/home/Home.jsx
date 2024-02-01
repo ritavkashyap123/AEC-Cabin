@@ -8,7 +8,7 @@ import CardHot from "../../components/card/CardHot";
 
 
 export default function Home() {
-  const { chowmin, special } = Data();
+  const { chowmin, special, mainCourse } = Data();
 
   return (
     <View>
@@ -30,6 +30,14 @@ export default function Home() {
             </View>
           ))}
         </View>
+        <Text style={styles.head}>Today's special dish </Text>
+        <View style={styles.menu}>
+          {mainCourse.map((main, index) => (
+            <View key={index}>
+              <Card name={main.name} priceNot={main.priceNot} price={main.price} image={main.image} />
+            </View>
+          ))}
+        </View>
       </ScrollView>
     </View>
   );
@@ -47,6 +55,12 @@ const styles = StyleSheet.create({
   },
   head1: {
     color: 'red',
+    fontSize: 24,
+    marginTop: 20,
+    marginHorizontal: 10,
+    fontWeight: 'bold'
+  },
+  head: {
     fontSize: 24,
     marginTop: 20,
     marginHorizontal: 10,

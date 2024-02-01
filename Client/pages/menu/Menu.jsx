@@ -23,7 +23,7 @@ export default function Menu() {
         <View style={styles.menu}>
           {friedRice.map((rice, index) => (
             <View key={index}>
-              <Card name={rice.name} priceNot={chow.priceNot} price={rice.price} image={rice.image}/>
+              <Card name={rice.name} priceNot={rice.priceNot} price={rice.price} image={rice.image}/>
             </View>
           ))}
         </View>
@@ -31,7 +31,7 @@ export default function Menu() {
         <View style={styles.menu}>
           {mainCourse.map((main, index) => (
             <View key={index}>
-              <Card name={main.name} priceNot={chow.priceNot} price={main.price} image={main.image}/>
+              <Card name={main.name} priceNot={main.priceNot} price={main.price} image={main.image}/>
             </View>
           ))}
         </View>

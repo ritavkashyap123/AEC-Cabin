@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   name: {
-    fontSize: 25,
+    fontSize: 22,
     color: "white",
   },
   price: {
